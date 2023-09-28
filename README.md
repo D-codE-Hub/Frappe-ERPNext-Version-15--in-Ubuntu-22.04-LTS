@@ -6,6 +6,9 @@ A complete Guide to Install Frappe/ERPNext version 15  in Ubuntu 22.04 LTS
 ### Pre-requisites 
 
       Python 3.11+
+
+      https://www.linuxcapable.com/how-to-install-python-3-11-on-ubuntu-linux/#google_vignette
+      
       Node.js 18+
       Redis 5                                       (caching and real time updates)
       MariaDB 10.3.x / Postgres 9.5.x               (to run database driven apps)
