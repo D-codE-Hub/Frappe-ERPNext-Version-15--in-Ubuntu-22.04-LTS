@@ -7,7 +7,7 @@ A complete Guide to Install Frappe/ERPNext version 15  in Ubuntu 22.04 LTS
 
       Python 3.11+
 
-      Open <https://www.linuxcapable.com/how-to-install-python-3-11-on-ubuntu-linux/#google_vignette> to install python 3.11
+      Open  [website (https://www.linuxcapable.com/how-to-install-python-3-11-on-ubuntu-linux/#google_vignette)][website]  to install python 3.11
       
       Node.js 18+
       Redis 5                                       (caching and real time updates)
