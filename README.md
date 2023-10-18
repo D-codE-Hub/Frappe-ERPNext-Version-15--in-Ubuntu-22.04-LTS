@@ -36,7 +36,7 @@ refer this for default python 3.11 setup <https://ubuntuhandbook.org/index.php/2
 ### STEP 4 Install virtualenv
     
     sudo apt-get install virtualenv
-    sudo apt install python3.10-venv
+    sudo apt install python3.11-venv
     
 
 ### STEP 5 Install MariaDB
@@ -147,13 +147,13 @@ Now press (Ctrl-X) to exit
 
 ### STEP 12 install frappe-bench
 
-    sudo -H pip3 install frappe-bench==5.10.1
+    sudo -H pip3 install frappe-bench
     
     bench --version
     
 ### STEP 13 initilise the frappe bench & install frappe latest version 
 
-    bench init frappe-bench --frappe-branch version-14
+    bench init frappe-bench --frappe-branch version-15
     
     cd frappe-bench/
     bench start
@@ -169,9 +169,9 @@ Now press (Ctrl-X) to exit
     
     bench get-app payments
     
-    bench get-app erpnext --branch version-14
+    bench get-app erpnext --branch version-15
     ###OR
-    bench get-app https://github.com/frappe/erpnext --branch version-14
+    bench get-app https://github.com/frappe/erpnext --branch version-15
 
     bench --site dcode.com install-app erpnext
     
@@ -197,15 +197,6 @@ Now press (Ctrl-X) to exit
     su - dcode-frappe
     
     
-    
-#### STEP 16 SSL certificate fot https
-    
-    sudo apt install certbot python3-certbot-nginx
-    certbot -d {domain_name} --register-unsafely-without-email
-    
-   for auto renew the certificate
-   
-    sudo certbot renew --dry-run
 
 
     
