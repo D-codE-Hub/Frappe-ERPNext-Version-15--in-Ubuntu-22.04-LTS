@@ -185,7 +185,10 @@ Now press (Ctrl-X) to exit
     
     bench new-site dcode.com
     
-    bench use dcode.com
+    bench --site dcode.com add-to-hosts
+
+Open url http://dcode.com:8000 to login 
+
 
 ### STEP 15 install ERPNext latest version in bench & site
 
