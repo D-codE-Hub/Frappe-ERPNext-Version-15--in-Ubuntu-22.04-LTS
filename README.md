@@ -150,7 +150,7 @@ Now press (Ctrl-X) to exit
     
     sudo apt-get install redis-server
 
-### STEP 9 install Node.js 14.X package
+### STEP 9 install Node.js 18.X package
 
     sudo apt install curl 
     curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
