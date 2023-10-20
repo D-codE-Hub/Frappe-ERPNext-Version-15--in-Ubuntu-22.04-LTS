@@ -2,16 +2,11 @@
 A complete Guide to Install Frappe/ERPNext version 15  in Ubuntu 22.04 LTS
 
 
-
 ### Pre-requisites 
 
       Python 3.11+
-
-Open  <https://www.linuxcapable.com/how-to-install-python-3-11-on-ubuntu-linux/#google_vignette> to install python 3.11
-
-refer this for default python 3.11 setup <https://ubuntuhandbook.org/index.php/2022/10/python-3-11-released-how-install-ubuntu/>
-      
       Node.js 18+
+      
       Redis 5                                       (caching and real time updates)
       MariaDB 10.3.x / Postgres 9.5.x               (to run database driven apps)
       yarn 1.12+                                    (js dependency manager)
@@ -19,6 +14,32 @@ refer this for default python 3.11 setup <https://ubuntuhandbook.org/index.php/2
       wkhtmltopdf (version 0.12.5 with patched qt)  (for pdf generation)
       cron                                          (bench's scheduled jobs: automated certificate renewal, scheduled backups)
       NGINX                                         (proxying multitenant sites in production)
+
+
+### STEP to Install python 3.11.xx
+> ## Note: `If you are using ubuntu 23.xx or latest  the default python version is 3.11.xx. So you can skip the python 3.11 installation steps`
+    
+#### First, import the Python repository with the most up-to-date stable releases.
+
+      sudo add-apt-repository ppa:deadsnakes/ppa -y
+      sudo apt update
+      
+#### install Python 3.11 by executing the following command in your terminal:
+
+      sudo apt install python3.11
+      python3.11 --version
+
+    
+#### To install all the extras in one go, run the following command.
+
+      sudo apt install python3.11-full
+
+
+
+#### Refer this for default python 3.11 setup
+
+- [www.linuxcapable.com](https://www.linuxcapable.com/how-to-install-python-3-11-on-ubuntu-linux/#google_vignette)
+- [ubuntuhandbook.org](https://ubuntuhandbook.org/index.php/2022/10/python-3-11-released-how-install-ubuntu)
 
 
 
@@ -35,7 +56,6 @@ refer this for default python 3.11 setup <https://ubuntuhandbook.org/index.php/2
 
 ### STEP 4 Install virtualenv
     
-    sudo apt-get install virtualenv
     sudo apt install python3.11-venv
     
 
@@ -153,7 +173,7 @@ Now press (Ctrl-X) to exit
     
 ### STEP 13 initilise the frappe bench & install frappe latest version 
 
-    bench init frappe-bench --frappe-branch version-15
+    bench init frappe-bench --frappe-branch version-15 --python python3.11
     
     cd frappe-bench/
     bench start
@@ -167,8 +187,6 @@ Now press (Ctrl-X) to exit
 ### STEP 15 install ERPNext latest version in bench & site
 
     
-    bench get-app payments
-    
     bench get-app erpnext --branch version-15
     ###OR
     bench get-app https://github.com/frappe/erpnext --branch version-15
@@ -176,25 +194,6 @@ Now press (Ctrl-X) to exit
     bench --site dcode.com install-app erpnext
     
     bench start
-    
-### Step 16 setup production
-    
-    sudo bench setup production dcode-frappe
-    bench restart
-
-#### If bench restart is not worked run the following command again with all Questions Yes
-    
-    sudo bench setup production dcode-frappe
-    
-#### if js and css file is not loading on login window run the following command
-
-    sudo chmod o+x /home/dcode-frappe
-    
-#### STEP 17 Create a new user
-    
-    sudo adduser dcode-frappe
-    sudo usermod -aG sudo dcode-frappe
-    su - dcode-frappe
     
     
 
