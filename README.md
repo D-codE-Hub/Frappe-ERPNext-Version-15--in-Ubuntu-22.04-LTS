@@ -27,6 +27,7 @@ A complete Guide to Install Frappe/ERPNext version 15  in Ubuntu 22.04 LTS
     
 #### First, import the Python repository with the most up-to-date stable releases.
 
+      sudo apt install software-properties-common
       sudo add-apt-repository ppa:deadsnakes/ppa -y
       sudo apt update
       
